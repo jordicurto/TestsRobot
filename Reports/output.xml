@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20180712 11:53:43.407">
+<suite id="s1" name="TestCases" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases">
+<kw name="Inici Suite" type="setup">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Inici Suite</arg>
+</arguments>
+<msg timestamp="20180712 11:53:43.422" level="INFO">Inici Suite</msg>
+<status status="PASS" starttime="20180712 11:53:43.422" endtime="20180712 11:53:43.422"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:43.422" endtime="20180712 11:53:43.422"></status>
+</kw>
+<suite id="s1-s1" name="CompraOnline" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\CompraOnline">
+<suite id="s1-s1-s1" name="CompraOnline" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\CompraOnline\CompraOnline.robot">
+<test id="s1-s1-s1-t1" name="Usuari no logat pot llistar productes del cataleg">
+<kw name="Given usuari no logat">
+<msg timestamp="20180712 11:53:43.438" level="FAIL">No keyword with name 'Given usuari no logat' found.</msg>
+<status status="FAIL" starttime="20180712 11:53:43.438" endtime="20180712 11:53:43.438"></status>
+</kw>
+<status status="FAIL" starttime="20180712 11:53:43.438" endtime="20180712 11:53:43.438" critical="yes">No keyword with name 'Given usuari no logat' found.</status>
+</test>
+<status status="FAIL" starttime="20180712 11:53:43.422" endtime="20180712 11:53:43.438"></status>
+</suite>
+<status status="FAIL" starttime="20180712 11:53:43.422" endtime="20180712 11:53:43.438"></status>
+</suite>
+<suite id="s1-s2" name="ConnectionCases" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\ConnectionCases">
+<suite id="s1-s2-s1" name="TestSSH" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\ConnectionCases\TestSSH.robot">
+<kw name="Open Connection And Log In" type="setup">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" starttime="20180712 11:53:43.516" endtime="20180712 11:53:43.516"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180712 11:53:43.516" level="INFO">Logging into '127.0.0.1:22' as 'nethack'.</msg>
+<msg timestamp="20180712 11:53:44.610" level="FAIL">NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 127.0.0.1</msg>
+<status status="FAIL" starttime="20180712 11:53:43.516" endtime="20180712 11:53:44.610"></status>
+</kw>
+<status status="FAIL" starttime="20180712 11:53:43.516" endtime="20180712 11:53:44.610"></status>
+</kw>
+<test id="s1-s2-s1-t1" name="Executar Commanda i comprovar resultat">
+<status status="FAIL" starttime="20180712 11:53:44.610" endtime="20180712 11:53:44.625" critical="yes">Parent suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 127.0.0.1</status>
+</test>
+<kw name="Close All Connections" library="SSHLibrary" type="teardown">
+<doc>Closes all open connections.</doc>
+<status status="PASS" starttime="20180712 11:53:44.625" endtime="20180712 11:53:44.625"></status>
+</kw>
+<status status="FAIL" starttime="20180712 11:53:43.438" endtime="20180712 11:53:44.625">Suite setup failed:
+NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 127.0.0.1</status>
+</suite>
+<suite id="s1-s2-s2" name="TestTelnet" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\ConnectionCases\TestTelnet.robot">
+<test id="s1-s2-s2-t1" name="Obtenir informacio del sistema conectat">
+<kw name="Open Connection" library="Telnet" type="setup">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>${IP}</arg>
+<arg>prompt=user</arg>
+</arguments>
+<msg timestamp="20180712 11:53:44.657" level="INFO">Opening connection to telehack.com:23 with prompt: user</msg>
+<status status="PASS" starttime="20180712 11:53:44.657" endtime="20180712 11:53:45.110"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>^\.</arg>
+</arguments>
+<status status="PASS" starttime="20180712 11:53:45.110" endtime="20180712 11:53:45.438"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>${CMD}</arg>
+</arguments>
+<assign>
+<var>${out}</var>
+</assign>
+<msg timestamp="20180712 11:53:45.438" level="INFO">Connected to TELEHACK port 35</msg>
+<msg timestamp="20180712 11:53:45.610" level="INFO">It is 2:56 am on Thursday, July 12, 2018 in Mountain View, California, USA.
+There are 29 local user</msg>
+<msg timestamp="20180712 11:53:45.610" level="INFO">${out} = 
+It is 2:56 am on Thursday, July 12, 2018 in Mountain View, California, USA.
+There are 29 local user</msg>
+<status status="PASS" starttime="20180712 11:53:45.438" endtime="20180712 11:53:45.610"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${out}</arg>
+</arguments>
+<msg timestamp="20180712 11:53:45.610" level="INFO">Length is 102</msg>
+<status status="PASS" starttime="20180712 11:53:45.610" endtime="20180712 11:53:45.610"></status>
+</kw>
+<kw name="Close All Connections" library="Telnet" type="teardown">
+<doc>Closes all open connections and empties the connection cache.</doc>
+<status status="PASS" starttime="20180712 11:53:45.610" endtime="20180712 11:53:45.610"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:44.657" endtime="20180712 11:53:45.610" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20180712 11:53:44.625" endtime="20180712 11:53:45.625"></status>
+</suite>
+<status status="FAIL" starttime="20180712 11:53:43.438" endtime="20180712 11:53:45.625"></status>
+</suite>
+<suite id="s1-s3" name="LoginCases" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\LoginCases">
+<suite id="s1-s3-s1" name="LoginGherkin" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\LoginCases\LoginGherkin.robot">
+<test id="s1-s3-s1-t1" name="Usuari accedeix al sistema amb credencials correctes">
+<kw name="Given usuari amb credencials correctes">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Precondicio credencials ok</arg>
+</arguments>
+<msg timestamp="20180712 11:53:45.641" level="INFO">Precondicio credencials ok</msg>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.641"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.641"></status>
+</kw>
+<kw name="When usuari introdueix el nom usuari">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Usuari introdueix nom</arg>
+</arguments>
+<msg timestamp="20180712 11:53:45.641" level="INFO">Usuari introdueix nom</msg>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.641"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.641"></status>
+</kw>
+<kw name="And usuari introduexi la contrasenya">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Usuari introdueix pwd</arg>
+</arguments>
+<msg timestamp="20180712 11:53:45.657" level="INFO">Usuari introdueix pwd</msg>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.657"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.657"></status>
+</kw>
+<kw name="Then es mostra el seu perfil d'usuari">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Es mostra el seu perfil</arg>
+</arguments>
+<msg timestamp="20180712 11:53:45.657" level="INFO">Es mostra el seu perfil</msg>
+<status status="PASS" starttime="20180712 11:53:45.657" endtime="20180712 11:53:45.657"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:45.657" endtime="20180712 11:53:45.657"></status>
+</kw>
+<tags>
+<tag>gherkin</tag>
+</tags>
+<status status="PASS" starttime="20180712 11:53:45.641" endtime="20180712 11:53:45.657" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20180712 11:53:45.625" endtime="20180712 11:53:45.657"></status>
+</suite>
+<status status="PASS" starttime="20180712 11:53:45.625" endtime="20180712 11:53:45.657"></status>
+</suite>
+<suite id="s1-s4" name="TestAmazon" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\TestAmazon.robot">
+<test id="s1-s4-t1" name="Verificar Titol Amazon">
+<kw name="Anar a Amazon">
+<kw name="Obrir Navegador Maximitzat" library="common">
+<arguments>
+<arg>${AMAZON_URL}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${navegador}</arg>
+</arguments>
+<msg timestamp="20180712 11:53:46.266" level="INFO">Opening browser 'firefox' to base url 'https://amazon.es'.</msg>
+<status status="PASS" starttime="20180712 11:53:46.266" endtime="20180712 11:53:54.843"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20180712 11:53:54.843" endtime="20180712 11:53:54.875"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:46.266" endtime="20180712 11:53:54.875"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180712 11:53:55.890" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20180712 11:53:54.875" endtime="20180712 11:53:55.890"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:46.266" endtime="20180712 11:53:55.890"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${titol}</var>
+</assign>
+<msg timestamp="20180712 11:53:55.907" level="INFO">${titol} = Amazon.es: compra online de electrónica, libros, deporte, hogar, moda y mucho más.</msg>
+<status status="PASS" starttime="20180712 11:53:55.900" endtime="20180712 11:53:55.907"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${titol}</arg>
+<arg>kk</arg>
+</arguments>
+<msg timestamp="20180712 11:53:55.909" level="FAIL">'Amazon.es: compra online de electrónica, libros, deporte, hogar, moda y mucho más.' does not contain 'kk'</msg>
+<status status="FAIL" starttime="20180712 11:53:55.908" endtime="20180712 11:53:55.910"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180712 11:53:55.911" endtime="20180712 11:53:59.505"></status>
+</kw>
+<status status="FAIL" starttime="20180712 11:53:46.266" endtime="20180712 11:53:59.505" critical="yes">'Amazon.es: compra online de electrónica, libros, deporte, hogar, moda y mucho más.' does not contain 'kk'</status>
+</test>
+<test id="s1-s4-t2" name="Accedir al Login a partir access superior">
+<kw name="Anar a Amazon">
+<kw name="Obrir Navegador Maximitzat" library="common">
+<arguments>
+<arg>${AMAZON_URL}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${navegador}</arg>
+</arguments>
+<msg timestamp="20180712 11:53:59.505" level="INFO">Opening browser 'firefox' to base url 'https://amazon.es'.</msg>
+<status status="PASS" starttime="20180712 11:53:59.505" endtime="20180712 11:54:07.427"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20180712 11:54:07.427" endtime="20180712 11:54:07.442"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:59.505" endtime="20180712 11:54:07.442"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180712 11:54:08.458" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20180712 11:54:07.442" endtime="20180712 11:54:08.458"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:53:59.505" endtime="20180712 11:54:08.458"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[@data-nav-role='signin']</arg>
+</arguments>
+<msg timestamp="20180712 11:54:08.459" level="INFO">Clicking link 'xpath://a[@data-nav-role='signin']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180712 11:54:08.700" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20180712 11:54:08.483" endtime="20180712 11:54:08.701"></status>
+</kw>
+<msg timestamp="20180712 11:54:08.754" level="FAIL">ElementNotInteractableException: Message: Element &lt;a class="nav-action-button" href="/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=esflex&amp;currentPageURL=https%3A%2F%2Fwww.amazon.es%2F%3Fref_%3Dnav_signin&amp;pageType=Gateway&amp;switchAccount=&amp;yshURL=https%3A%2F%2Fwww.amazon.es%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dnav_signin"&gt; could not be scrolled into view
+</msg>
+<status status="FAIL" starttime="20180712 11:54:08.458" endtime="20180712 11:54:08.755"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180712 11:54:08.755" endtime="20180712 11:54:10.309"></status>
+</kw>
+<tags>
+<tag>login</tag>
+</tags>
+<status status="FAIL" starttime="20180712 11:53:59.505" endtime="20180712 11:54:10.309" critical="yes">ElementNotInteractableException: Message: Element &lt;a class="nav-action-button" href="/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=esflex&amp;currentPageURL=https%3A%2F%2Fwww.amazon.es%2F%3Fref_%3Dnav_signin&amp;pageType=Gateway&amp;switchAccount=&amp;yshURL=https%3A%2F%2Fwww.amazon.es%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dnav_signin"&gt; could not be scrolled into view
+</status>
+</test>
+<status status="FAIL" starttime="20180712 11:53:45.657" endtime="20180712 11:54:10.309"></status>
+</suite>
+<suite id="s1-s5" name="TestRemote" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\TestRemote.robot">
+<test id="s1-s5-t1" name="Test Case 1">
+<kw name="obrir compte">
+<msg timestamp="20180712 11:54:13.434" level="FAIL">No keyword with name 'obrir compte' found.</msg>
+<status status="FAIL" starttime="20180712 11:54:13.434" endtime="20180712 11:54:13.434"></status>
+</kw>
+<status status="FAIL" starttime="20180712 11:54:13.434" endtime="20180712 11:54:13.434" critical="yes">No keyword with name 'obrir compte' found.</status>
+</test>
+<status status="FAIL" starttime="20180712 11:54:10.309" endtime="20180712 11:54:13.434"></status>
+</suite>
+<suite id="s1-s6" name="TestSuite" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\TestSuite.robot">
+<test id="s1-s6-t1" name="Obrir i tancar navegador">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180712 11:54:13.574" level="INFO">Opening browser 'firefox' to base url 'http://google.com'.</msg>
+<status status="PASS" starttime="20180712 11:54:13.574" endtime="20180712 11:54:19.571"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20180712 11:54:19.571" endtime="20180712 11:54:19.587"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:lst-ib</arg>
+<arg>gtd</arg>
+</arguments>
+<msg timestamp="20180712 11:54:19.587" level="INFO">Typing text 'gtd' into text field 'id:lst-ib'.</msg>
+<status status="PASS" starttime="20180712 11:54:19.587" endtime="20180712 11:54:19.634"></status>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20180712 11:54:19.634" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20180712 11:54:19.634" endtime="20180712 11:54:19.650"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180712 11:54:21.665" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20180712 11:54:19.650" endtime="20180712 11:54:21.665"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20180712 11:54:21.665" level="INFO">${title} = gtd - Buscar con Google</msg>
+<status status="PASS" starttime="20180712 11:54:21.665" endtime="20180712 11:54:21.665"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>gtd</arg>
+</arguments>
+<status status="PASS" starttime="20180712 11:54:21.665" endtime="20180712 11:54:21.665"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[contains(text(), 'GTD')]</arg>
+</arguments>
+<msg timestamp="20180712 11:54:21.665" level="INFO">Clicking link 'xpath://a[contains(text(), 'GTD')]'.</msg>
+<status status="PASS" starttime="20180712 11:54:21.665" endtime="20180712 11:54:22.478"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180712 11:54:24.493" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20180712 11:54:22.478" endtime="20180712 11:54:24.493"></status>
+</kw>
+<kw name="Accio Que Retorna Un Valor">
+<arguments>
+<arg>Jordi</arg>
+</arguments>
+<assign>
+<var>${var ret}</var>
+</assign>
+<msg timestamp="20180712 11:54:24.493" level="INFO">${var ret} = Valor retornat Jordi</msg>
+<status status="PASS" starttime="20180712 11:54:24.493" endtime="20180712 11:54:24.493"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Valor retornat per la kw ${var ret}</arg>
+</arguments>
+<msg timestamp="20180712 11:54:24.493" level="INFO">Valor retornat per la kw Valor retornat Jordi</msg>
+<status status="PASS" starttime="20180712 11:54:24.493" endtime="20180712 11:54:24.493"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180712 11:54:24.493" endtime="20180712 11:54:25.493"></status>
+</kw>
+<tags>
+<tag>browser</tag>
+</tags>
+<status status="PASS" starttime="20180712 11:54:13.574" endtime="20180712 11:54:25.493" critical="yes"></status>
+</test>
+<test id="s1-s6-t2" name="Llistar productes Mercadona">
+<kw name="Open Browser" library="SeleniumLibrary" type="setup">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://mercadona.es</arg>
+</arguments>
+<msg timestamp="20180712 11:54:25.493" level="INFO">Opening browser 'firefox' to base url 'http://mercadona.es'.</msg>
+<status status="PASS" starttime="20180712 11:54:25.493" endtime="20180712 11:54:31.133"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20180712 11:54:31.133" endtime="20180712 11:54:31.180"></status>
+</kw>
+<kw name="Execute Manual Step" library="Dialogs">
+<doc>Pauses test execution until user sets the keyword status.</doc>
+<arguments>
+<arg>Hola</arg>
+</arguments>
+<status status="PASS" starttime="20180712 11:54:31.180" endtime="20180712 11:55:17.704"></status>
+</kw>
+<kw name="Llistar productes de la web X" library="common">
+<arguments>
+<arg>o-info</arg>
+</arguments>
+<msg timestamp="20180712 11:55:17.720" level="FAIL">ConnectionAbortedError: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host</msg>
+<status status="FAIL" starttime="20180712 11:55:17.704" endtime="20180712 11:55:17.720"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180712 11:55:17.720" endtime="20180712 11:55:18.533"></status>
+</kw>
+<tags>
+<tag>merca</tag>
+</tags>
+<status status="FAIL" starttime="20180712 11:54:25.493" endtime="20180712 11:55:18.533" critical="yes">ConnectionAbortedError: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host</status>
+</test>
+<status status="FAIL" starttime="20180712 11:54:13.449" endtime="20180712 11:55:18.533"></status>
+</suite>
+<suite id="s1-s7" name="TestSuite2" source="C:\Users\Robot\PycharmProjects\RobotP3\TestCases\TestSuite2.robot">
+<test id="s1-s7-t1" name="Test Case 1">
+<kw name="Inici Sistema" library="common" type="setup">
+<arguments>
+<arg>TCase</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Inici sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.533" level="INFO">Inici sistema proves suite 2 amb el param TCase</msg>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>El Test Case 1 ha començat ${Una Url}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.533" level="INFO">El Test Case 1 ha començat http://mundodeportivo.com</msg>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<kw name="Finalitzacio Sistema" library="common" type="teardown">
+<arguments>
+<arg>TCase</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Finalitzacio sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.533" level="INFO">Finalitzacio sistema proves suite 2 amb el param TCase</msg>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533" critical="yes"></status>
+</test>
+<test id="s1-s7-t2" name="Test Case 2">
+<kw name="Inici Sistema" library="common" type="setup">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Inici sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.533" level="INFO">Inici sistema proves suite 2 amb el param TSuite</msg>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>El Test Case 2 ha començat</arg>
+<arg>console=true</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.533" level="INFO">El Test Case 2 ha començat</msg>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.533"></status>
+</kw>
+<kw name="Finalitzacio Sistema" library="common" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Finalitzacio sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">Finalitzacio sistema proves suite 2 amb el param TSuite</msg>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.548" critical="yes"></status>
+</test>
+<test id="s1-s7-t3" name="Test Case 3">
+<kw name="Inici Sistema" library="common" type="setup">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Inici sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">Inici sistema proves suite 2 amb el param TSuite</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Accio Que Rep Un Parametre I En Funcio Realitza A O B">
+<arguments>
+<arg>15</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${edat} &gt; 18</arg>
+<arg>KW1</arg>
+<arg>ELSE IF</arg>
+<arg>${edat} == 18</arg>
+<arg>KW3</arg>
+<arg>ELSE</arg>
+<arg>KW2</arg>
+</arguments>
+<kw name="KW2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>KW2</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">KW2</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Accio Que Rep Un Parametre I En Funcio Realitza A O B">
+<arguments>
+<arg>18</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${edat} &gt; 18</arg>
+<arg>KW1</arg>
+<arg>ELSE IF</arg>
+<arg>${edat} == 18</arg>
+<arg>KW3</arg>
+<arg>ELSE</arg>
+<arg>KW2</arg>
+</arguments>
+<kw name="KW3">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>KW3</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">KW3</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Accio Que Rep Un Parametre I En Funcio Realitza A O B">
+<arguments>
+<arg>20</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${edat} &gt; 18</arg>
+<arg>KW1</arg>
+<arg>ELSE IF</arg>
+<arg>${edat} == 18</arg>
+<arg>KW3</arg>
+<arg>ELSE</arg>
+<arg>KW2</arg>
+</arguments>
+<kw name="KW1">
+<kw name="Py Test" library="common">
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20180712 11:55:18.548" level="INFO">${result} = Aixo es el resultat des de Python</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>KW1 = ${result}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">KW1 = Aixo es el resultat des de Python</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Una keyword per a Python" library="common">
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Finalitzacio Sistema" library="common" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Finalitzacio sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">Finalitzacio sistema proves suite 2 amb el param TSuite</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548" critical="yes"></status>
+</test>
+<test id="s1-s7-t4" name="Test Case 4">
+<kw name="Inici Sistema" library="common" type="setup">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Inici sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">Inici sistema proves suite 2 amb el param TSuite</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Keyword Amb Un Argument Hola">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>He rebut l'argument ${arg1}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">He rebut l'argument Hola</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Keyword Amb Un Argument Adeu">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>He rebut l'argument ${arg1}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">He rebut l'argument Adeu</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Keyword Amb Un Argument KKK">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>He rebut l'argument ${arg1}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">He rebut l'argument KKK</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Keyword Amb Un Argument dkasñ">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>He rebut l'argument ${arg1}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">He rebut l'argument dkasñ</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<kw name="Finalitzacio Sistema" library="common" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Finalitzacio sistema proves suite 2 amb el param ${param}</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">Finalitzacio sistema proves suite 2 amb el param TSuite</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548" critical="yes"></status>
+</test>
+<doc>Proves d'escenaris de Suite2
+per a verificar el coreecte
+access al sistema</doc>
+<status status="PASS" starttime="20180712 11:55:18.533" endtime="20180712 11:55:18.548"></status>
+</suite>
+<kw name="Finalitzacio Suite" type="teardown">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Finalitzacio Suite</arg>
+</arguments>
+<msg timestamp="20180712 11:55:18.548" level="INFO">Finalitzacio Suite</msg>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="PASS" starttime="20180712 11:55:18.548" endtime="20180712 11:55:18.548"></status>
+</kw>
+<status status="FAIL" starttime="20180712 11:53:43.407" endtime="20180712 11:55:18.548"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="6">Critical Tests</stat>
+<stat pass="7" fail="6">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">browser</stat>
+<stat pass="1" fail="0">gherkin</stat>
+<stat pass="0" fail="1">login</stat>
+<stat pass="0" fail="1">merca</stat>
+</tag>
+<suite>
+<stat pass="7" fail="6" id="s1" name="TestCases">TestCases</stat>
+<stat pass="0" fail="1" id="s1-s1" name="CompraOnline">TestCases.CompraOnline</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="CompraOnline">TestCases.CompraOnline.CompraOnline</stat>
+<stat pass="1" fail="1" id="s1-s2" name="ConnectionCases">TestCases.ConnectionCases</stat>
+<stat pass="0" fail="1" id="s1-s2-s1" name="TestSSH">TestCases.ConnectionCases.TestSSH</stat>
+<stat pass="1" fail="0" id="s1-s2-s2" name="TestTelnet">TestCases.ConnectionCases.TestTelnet</stat>
+<stat pass="1" fail="0" id="s1-s3" name="LoginCases">TestCases.LoginCases</stat>
+<stat pass="1" fail="0" id="s1-s3-s1" name="LoginGherkin">TestCases.LoginCases.LoginGherkin</stat>
+<stat pass="0" fail="2" id="s1-s4" name="TestAmazon">TestCases.TestAmazon</stat>
+<stat pass="0" fail="1" id="s1-s5" name="TestRemote">TestCases.TestRemote</stat>
+<stat pass="1" fail="1" id="s1-s6" name="TestSuite">TestCases.TestSuite</stat>
+<stat pass="4" fail="0" id="s1-s7" name="TestSuite2">TestCases.TestSuite2</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180712 11:54:13.434" level="ERROR">Error in file 'C:\Users\Robot\PycharmProjects\RobotP3\TestCases\TestRemote.robot': Getting keyword names from library 'Remote' failed: Calling dynamic method 'get_keyword_names' failed: Connecting remote server at http://127.0.0.1:8270 failed: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión</msg>
+</errors>
+</robot>
